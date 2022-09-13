@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
 
 /* Custom Properties */
 
 :root {
     --leading: 2em;
 }
+
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -13,7 +14,7 @@ body {
 
 .hero-bg {
     background: #307D99 url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/bg_copy.jpg');
-    background-position: 12% 83%;
+    background-size: cover;
     color: white;
     text-align: center;
     padding-bottom: 4em;
@@ -42,16 +43,16 @@ h1 {
 h1 span {
     text-transform: uppercase;
     display: block;
-    font-size: 1.rem;
+    font-size: 1.4rem;
     position: relative;
-    z-index: 1
+    z-index: 1;
 }
 
 h1 span::before {
-    content: '';
+    content: ' ';
     position: absolute;
     width: 3em;
-    background: #00bfff;
+    background: #00BFFF;
     height: .4em;
     bottom: 0;
     z-index: -1;
@@ -60,18 +61,17 @@ h1 span::before {
 
 .hero-bg p {
     font-weight: bold;
-    margin: 0 1em, 3em;
-
+    margin: 0 1em 3em;
 }
 
 .form-container {
     background-color: white;
-    margin: 2em, -1em, 0;
+    margin: 2em -1em 0;
     padding: 2em;
 }
 
 label {
-    color: #2d7d98;
+    color: #2D7D98;
     font-weight: bold;
     display: block;
     margin-bottom: 1em;
@@ -88,7 +88,7 @@ input[type=text] {
 }
 
 .form-container p {
-    color: grey;
+    color: gray;
     margin-bottom: 1.5em;
     font-weight: normal;
     font-size: .9em;
@@ -96,12 +96,12 @@ input[type=text] {
 }
 
 input[type=button] {
-    background-color: #f89104;
+    background-color: #F89104;
     border: none;
     width: 100%;
     color: white;
     font-weight: bold;
-    padding: 1e, 0;
+    padding: 1em 0;
     border-radius: .5em;
     font-size: 1.3em;
     cursor: pointer;
@@ -115,7 +115,6 @@ input[type=button]:hover {
     margin: 0;
 }
 
-
 .right-col {
     text-align: center;
     margin: 3em 1em;
@@ -123,14 +122,14 @@ input[type=button]:hover {
 
 h2 {
     text-transform: uppercase;
-    position: relative
+    position: relative;
 }
 
 h2::before {
-    content: '';
+    content: ' ';
     position: absolute;
     width: 8em;
-    background: #00bfff;
+    background: #00BFFF;
     height: .4em;
     bottom: 0;
     z-index: -1;
@@ -141,7 +140,7 @@ img {
     width: 100%;
 }
 
-P {
+p {
     line-height: var(--leading);
 }
 
@@ -154,23 +153,26 @@ P {
     place-content: center;
     color: white;
     display: none;
-    
+    opacity: 0;
+}
+
+.animate-overlay {
+    animation: overlay 3s forwards;
 }
 
 @media (min-width: 730px) {
+
     section {
         margin: 0 4em;
     }
-
     .form-container {
         margin: 2em -4em 0;
     }
+
 }
 
-
-
-
 @media (min-width: 930px) {
+
     .hero-bg {
         text-align: left;
     }
@@ -181,29 +183,25 @@ P {
 
     .hero-bg section {
         width: 65%;
-
     }
 
     .form-container {
         margin: 2em 0 0;
         padding: 2em;
         border-radius: .5em;
-        box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
+        box-shadow: 10px 10px 10px rgba(0,0,0,.3);
     }
 
     form {
         display: flex;
     }
-
-    .form.left {
+    .form-left {
         width: 70%;
     }
-
     label {
         margin: 0;
     }
-
-    input[type=button] {
+    input[type="button"] {
         height: fit-content;
         font-size: 1.1em;
         margin-left: 1em;
@@ -211,7 +209,6 @@ P {
         padding: .7em 0;
         width: 30%;
     }
-
     .hero-bg p {
         margin-bottom: 0;
     }
@@ -237,6 +234,14 @@ P {
     h2 {
         margin: 0;
     }
+
+}
+
+@media (min-width: 1275px) { 
+    .hero-bg section {
+        width: 45%;
+        margin: 0 15%;
+    }
 }
 
 .top {
@@ -248,8 +253,23 @@ P {
         opacity: 0;
         transform: translateY(-2em);
     }
-
     to {
         opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes overlay {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
