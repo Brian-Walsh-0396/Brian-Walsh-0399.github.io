@@ -1,3 +1,4 @@
+
 body {
     margin: 1.5em;
     font-family: 'Poppins', sans-serif;
@@ -115,7 +116,6 @@ section.hero {
         font-weight: bold;
         font-size: 1.25rem;
     }
-
     .desc {
         line-height: 1.5rem;
     }
@@ -221,9 +221,9 @@ section.hero {
     }
 
     .feature.left {
-        grid-template-areas:
+        grid-template-areas: 
             "left right";
-
+        
         img {
             grid-area: left;
         }
@@ -253,7 +253,6 @@ section.hero {
     from {
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     }
-
     to {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
@@ -263,17 +262,14 @@ section.hero {
     from {
         transform: translateY(-30px)
     }
-
     to {
         transform: translateY(0)
     }
 }
-
 @keyframes moveDown {
     from {
         transform: translateY(-100px)
     }
-
     to {
         transform: translateY(0);
         opacity: 1;
